@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h2> You Cart - show cart </h2>
+<table>
+<% @cart.line_items.each do |item| %>
+  <tr>
+    <td><%= item.quantity %> &times;</td>
+    <td><%= item.product.name %></td>
+    <td class='item_price'><%= sprintf("R$%0.02f", item.total_price) %></td>
+  </tr>
+<% end %>
+  <tr class='total_line'>
+    <td colspan='2'>Total</td>
+    <td class='total_cell'><%= sprintf("R$%0.02f", @cart.total_price) %></td>
+  </tr>
+</table>
+
+<%= button_to 'Empty cart', @cart, method: :delete,
+data: {confirm: 'Are you sure?' } %>
+
+<%= link_to 'Edit', edit_cart_path(@cart) %> |
+<%= link_to 'Back', carts_path %>

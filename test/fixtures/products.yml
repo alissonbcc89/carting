@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  image_url: MyString
+  price: 9.99
+  expiraton_date: 2021-04-03
+  purchase_price: 9.99
+  the_amount: 1
+
+two:
+  name: MyString
+  description: MyText
+  image_url: MyString
+  price: 9.99
+  expiraton_date: 2021-04-03
+  purchase_price: 9.99
+  the_amount: 1

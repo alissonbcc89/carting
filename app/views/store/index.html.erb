@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+<h1>You Pragmatic Catalog - Store#index</h1>
+<% cache ['store', Product.latest ] do %>
+  <% @products.each do |product| %>
+    <%cache ['entry', product] do %>
+      <div class='entry'>
+        <%= image_tag(product.image_url, heigth:25, length:25)%>
+        <h3><%= product.name %></h3>
+        <%= product.description %>
+        <div class='price_line'>
+          <span class='price'><%= sprintf("R$%0.02f", product.price) %></span>
+          <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
