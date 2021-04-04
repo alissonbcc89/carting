@@ -1,4 +1,3 @@
-<!--<% @cart.line_items.each do |item| %> -->
 <% if line_item == @current_item %>
 <tr id="current_item">
 <% else %>
@@ -8,4 +7,4 @@
     <td><%= line_item.product.name %></td>
     <td class='item_price'><%= sprintf("R$%0.02f", line_item.total_price) %></td>
   </tr>
-<!-- <% end %> -->
+

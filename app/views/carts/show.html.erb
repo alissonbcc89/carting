@@ -6,11 +6,12 @@
   <tr>
     <td><%= item.quantity %> &times;</td>
     <td><%= item.product.name %></td>
+    <td><%= sprintf("R$%0.02f", item.product.price) %></td>
     <td class='item_price'><%= sprintf("R$%0.02f", item.total_price) %></td>
   </tr>
 <% end %>
   <tr class='total_line'>
-    <td colspan='2'>Total</td>
+    <td colspan='3'>Total</td>
     <td class='total_cell'><%= sprintf("R$%0.02f", @cart.total_price) %></td>
   </tr>
 </table>
